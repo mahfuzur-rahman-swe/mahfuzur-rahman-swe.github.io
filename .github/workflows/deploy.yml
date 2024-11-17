@@ -1,17 +1,16 @@
-
 name: Deploy to GitHub Pages
 
 on:
   push:
     branches:
-      - main  # Deploy when changes are pushed to the main branch
+      - main  # Trigger deployment when pushing to the main branch
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the code
+      # Checkout the repository
       - name: Checkout code
         uses: actions/checkout@v3
 
@@ -19,7 +18,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 16  # Choose the version you're using in your project
 
       # Install dependencies
       - name: Install dependencies
@@ -33,5 +32,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
-          github_token: ${{ GH_TOKEN.GH_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./dist/my-portfolio  # Replace with your dist folder name
