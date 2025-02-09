@@ -26,7 +26,8 @@ jobs:
 
       # Build the Angular app
       - name: Build Angular app
-        run: npm run build -- --configuration production --base-href /
+#        run: npm run build -- --configuration production --base-href /
+        run: ng build --configuration production --base-href "https://mahfuzur-rahman-swe.github.io/"
 
       # Deploy to GitHub Pages
       - name: Deploy to GitHub Pages
