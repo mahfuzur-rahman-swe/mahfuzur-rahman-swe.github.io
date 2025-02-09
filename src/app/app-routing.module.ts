@@ -8,6 +8,7 @@ const routes: Routes = [
   {path: '', component: AboutComponent},
   {path: 'portfolio', component: PortfolioComponent},
   {path: 'resume', component: ResumeComponent},
+  { path: '**', redirectTo: 'home' }
 ];
 
 @NgModule({
