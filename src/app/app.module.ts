@@ -10,6 +10,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatExpansionModule} from "@angular/material/expansion";
 import { ResumeComponent } from './resume/resume.component';
 import {MatIconModule} from "@angular/material/icon";
+import {LocationStrategy, PathLocationStrategy} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import {MatIconModule} from "@angular/material/icon";
     MatExpansionModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [{ provide: LocationStrategy, useClass: PathLocationStrategy }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
