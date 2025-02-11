@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script>
+    var path = window.location.pathname;
+    console.log(path)
+    if (path !== "/" && !path.startsWith("/index.html")) {
+      window.location.replace("/?redirect=" + path);
+    }
+  </script>
+</head>
+</html>
