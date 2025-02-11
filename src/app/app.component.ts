@@ -14,12 +14,13 @@ export class AppComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // const urlParams = new URLSearchParams(window.location.search);
-    // const redirect = urlParams.get('redirect');
-    //
-    // if (redirect) {
-    //   this.router.navigateByUrl(redirect);
-    // }
+    const urlParams = new URLSearchParams(window.location.search);
+    const redirect = urlParams.get('redirect');
+    console.log(redirect)
+
+    if (redirect) {
+      this.router.navigateByUrl(redirect);
+    }
   }
   title = 'my-portfolio';
 }
